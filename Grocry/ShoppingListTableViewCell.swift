@@ -12,6 +12,7 @@ import UIKit
 class ShoppingListTableViewCell : UITableViewCell {
     
     lazy var countView :CountView = {
+       
         let view = CountView(frame: CGRect.zero)
         self.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -26,16 +27,6 @@ class ShoppingListTableViewCell : UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    private func setupConstraints() {
-        
-        countView.translatesAutoresizingMaskIntoConstraints = false
-        
-        countView.width(50)
-            .height(50)
-            .marginRight(to :self, value: -20)
-            .centerY(inView : self).apply()
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -50,7 +50,7 @@ protocol Url {
 
 private let BASE_URL = URL(string:"http://localhost:8080")!
 
-enum App {
+enum Routes {
    
     enum ShoppingList {
         case all
@@ -58,7 +58,7 @@ enum App {
     }
 }
 
-extension App.ShoppingList : Url {
+extension Routes.ShoppingList : Url {
     
     var url :URL {
         switch self {

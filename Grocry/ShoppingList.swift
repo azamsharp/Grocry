@@ -28,7 +28,7 @@ extension ShoppingList {
 
 extension ShoppingList {
     
-    static let all = Resource<[ShoppingList]>(url :App.ShoppingList.all.url) { data in
+    static let all = Resource<[ShoppingList]>(url :Routes.ShoppingList.all.url) { data in
         
         let json = try? JSONSerialization.jsonObject(with: data, options: [])
         guard let dictionaries = json as? [JSONDictionary] else {
