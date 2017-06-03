@@ -12,20 +12,20 @@ import UIKit
 class ShoppingListTableViewCell : UITableViewCell {
     
     lazy var countView :CountView = {
-        
         let view = CountView(frame: CGRect.zero)
+        self.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.width(50)
+            .height(50)
+            .marginRight(to :self, value: -20)
+            .centerY(inView : self).apply()
+        
         return view
     }()
-    
-    //var countView = CountView(frame: CGRect.zero)
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-      //  countView.text = "something"
-        self.addSubview(countView)
-        setupConstraints()
     }
     
     private func setupConstraints() {

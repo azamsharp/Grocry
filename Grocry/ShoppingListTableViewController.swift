@@ -30,7 +30,7 @@ class ShoppingListTableViewController : UITableViewController {
                     
                     cell.textLabel?.text = shoppingList.title
                     cell.countView.label.text = "35"
-                    
+
                 }
                 
                 self.tableView.dataSource = self.dataSource
