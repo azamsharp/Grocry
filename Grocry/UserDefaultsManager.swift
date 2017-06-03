@@ -8,15 +8,19 @@
 
 import Foundation
 
+enum Key :String {
+    case userId = "userId"
+}
+
 class UserDefaultsManager {
     
-    static func get<T>(key :String) -> T? {
+    static func get<T>(key :Key) -> T? {
         
         let defaults = UserDefaults.standard
-        return defaults.value(forKey: key) as? T
+        return defaults.value(forKey: key.rawValue) as? T
     }
     
-    static func set(key: String, object:Any) {
+    static func set<T>(key: String, object:T) {
         
         let defaults = UserDefaults.standard
         defaults.set(object, forKey: key)
